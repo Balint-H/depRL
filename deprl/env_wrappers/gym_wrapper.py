@@ -14,6 +14,7 @@ class GymWrapper(ExceptionWrapper):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.name = "GymEnv"
         dummy_counter = 2
         try:
             from mujoco_py.builder import MujocoException
@@ -61,3 +62,4 @@ class GymWrapper(ExceptionWrapper):
             return self.unwrapped.max_episode_steps
         else:
             return self.unwrapped.horizon
+            
