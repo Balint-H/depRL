@@ -1,5 +1,5 @@
 from deprl.vendor.tonic import logger
-
+import numpy as np
 from .wrappers import ExceptionWrapper
 
 
@@ -15,7 +15,7 @@ class GymWrapper(ExceptionWrapper):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.name = "GymEnv"
-        self.seed = 123
+        self.seed = np.random.default_rng
         dummy_counter = 2
         try:
             from mujoco_py.builder import MujocoException
