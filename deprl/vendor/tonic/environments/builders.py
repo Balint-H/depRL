@@ -5,6 +5,7 @@ from types import SimpleNamespace
 
 import numpy as np
 from gymnasium import wrappers
+import  gymnasium as gym
 
 try:
     from myosuite.utils import gym
