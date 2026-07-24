@@ -14,7 +14,8 @@ class GymWrapper(ExceptionWrapper):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.name = "GymEnv"
+        self.name = self.unwrapped.name
+        self.seed = self.unwrapped.seed
         dummy_counter = 2
         try:
             from mujoco_py.builder import MujocoException
